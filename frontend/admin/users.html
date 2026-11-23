@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f766e'/></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Users | CivicEvents</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 min-h-screen flex flex-col">
+  <header id="app-header"></header>
+
+  <div class="flex-1 max-w-6xl w-full mx-auto px-4 py-8 grid gap-6 md:grid-cols-5">
+    <aside id="admin-nav" class="md:col-span-1"></aside>
+
+    <main class="md:col-span-4">
+      <h1 class="text-2xl font-bold text-slate-900 mb-6">Users</h1>
+
+      <div class="mb-4">
+        <label for="q" class="block text-sm font-medium text-slate-700">Search users</label>
+        <input id="q" type="search" placeholder="Name or email" class="mt-1 w-full max-w-sm rounded-lg border border-slate-300 px-3 py-2">
+      </div>
+
+      <div class="bg-white rounded-xl shadow overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-slate-50 text-left text-slate-600">
+            <tr>
+              <th scope="col" class="px-4 py-3 font-medium">Name</th>
+              <th scope="col" class="px-4 py-3 font-medium">Email</th>
+              <th scope="col" class="px-4 py-3 font-medium">Role</th>
+              <th scope="col" class="px-4 py-3 font-medium">Status</th>
+              <th scope="col" class="px-4 py-3 font-medium"><span class="sr-only">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody id="rows" class="divide-y divide-slate-100" aria-live="polite"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="user-dialog" class="rounded-xl p-6 w-full max-w-md backdrop:bg-black/40">
+    <div id="user-detail"></div>
+    <form method="dialog" class="mt-5 text-right">
+      <button class="bg-teal-700 text-white text-sm px-4 py-2 rounded-lg">Close</button>
+    </form>
+  </dialog>
+
+  <footer id="app-footer"></footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script>Auth.requireAdmin();</script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/admin-nav.js"></script>
+  <script src="../js/pages/users.js"></script>
+</body>
+</html>
