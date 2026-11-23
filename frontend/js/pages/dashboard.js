@@ -1,5 +1,5 @@
 $(function () {
-  // Role guard: this page is admin-only, and the endpoint is admin-only on the backend too.
+  // Role-based access guard: this page is admin-only, and the endpoint is admin-only on the backend too.
   Auth.requireAdmin();
 
   function label(key) {

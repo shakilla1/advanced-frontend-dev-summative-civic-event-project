@@ -71,7 +71,7 @@ Admin and user permissions are enforced in two layers. The backend is the real s
 
 - `js/auth.js`: `requireLogin()` sends anonymous visitors to the login page, and `requireAdmin()` sends non-admins to the events page.
 - Every admin-only page (`event-form.html`, `admin/dashboard.html`, `admin/users.html`) calls `Auth.requireAdmin()` before anything else.
-- Admin buttons (create, edit, delete, publish) are rendered only when `Auth.isAdmin()` is true, and each click handler checks the role again. The comments `Role guard:` mark each place in the code.
+- Admin buttons (create, edit, delete, publish) are rendered only when `Auth.isAdmin()` is true, and each click handler checks the role again. The comments `Role-based access guard:` mark each place in the code.
 - `js/api.js`: attaches the Bearer token to every request and signs the user out on a 401.
 
 ## Backend limits the UI respects

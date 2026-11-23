@@ -38,13 +38,13 @@ const Auth = {
         return !!user && user.role === "admin";
     },
 
-    // Role guard: pages that need a login call this first.
+    // Role-based access guard: pages that need a login call this first.
     // Anonymous visitors are sent to the login page.
     requireLogin() {
         if (!this.isLoggedIn()) go("login.html");
     },
 
-    // Role guard: admin-only pages call this first.
+    // Role-based access guard: admin-only pages call this first.
     // Normal users are sent to the events page. The backend still enforces
     // the real permission; this only keeps the UI honest.
     requireAdmin() {

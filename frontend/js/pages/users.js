@@ -1,5 +1,5 @@
 $(function () {
-  // Role guard: only admins reach this page; the backend also restricts these endpoints to admins.
+  // Role-based access guard: only admins reach this page; the backend also restricts these endpoints to admins.
   Auth.requireAdmin();
 
   const me = Auth.user();

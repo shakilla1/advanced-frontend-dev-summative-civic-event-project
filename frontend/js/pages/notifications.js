@@ -93,7 +93,7 @@ $(function () {
   });
 
   $("#detail").on("click", "[data-delete]", function () {
-    // Role guard: only admins get the delete button, and the handler checks again.
+    // Role-based access guard: only admins get the delete button, and the handler checks again.
     if (!admin || !confirm("Delete this notification for everyone?")) return;
     const id = $(this).data("delete");
 

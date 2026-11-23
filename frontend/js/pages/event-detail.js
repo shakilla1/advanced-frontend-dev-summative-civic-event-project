@@ -90,7 +90,7 @@ $(function () {
     }
 
     function loadAttendees() {
-        // Role guard: attendee list is requested and shown only for admins.
+        // Role-based access guard: attendee list is requested and shown only for admins.
         if (!admin) return;
         api("/api/event-registrations/event/" + eventId + "/attendees")
             .done((res) => {
@@ -105,7 +105,7 @@ $(function () {
             .fail((xhr) => toast(errorMessage(xhr), "error"));
     }
     function loadReviews() {
-        // Role guard: the backend only lets admins read all feedback for an event.
+        // Role-based access guard: the backend only lets admins read all feedback for an event.
         if (!admin) return;
         api("/api/event-feedback/event/" + eventId)
             .done((res) => {

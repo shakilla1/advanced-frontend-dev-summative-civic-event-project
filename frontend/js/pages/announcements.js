@@ -5,7 +5,7 @@ $(function () {
     const admin = Auth.isAdmin();
     let items = [];
 
-    // Role guard: the upload form and the publish/delete buttons exist only for admins.
+    // Role-based access guard: the upload form and the publish/delete buttons exist only for admins.
     if (admin) $("#admin-box").removeClass("hidden");
 
     function duration(seconds) {

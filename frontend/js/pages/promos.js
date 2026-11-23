@@ -8,7 +8,7 @@ $(function () {
     let items = [];
     let editingId = null;
 
-    // Role guard: the upload/edit form and the per-card admin buttons exist only for admins.
+    // Role-based access guard: the upload/edit form and the per-card admin buttons exist only for admins.
     if (admin) $("#admin-box").removeClass("hidden");
 
     function readCache() {

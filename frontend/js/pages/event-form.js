@@ -1,5 +1,5 @@
 $(function () {
-  // Role guard: only admins may open this page; everyone else is sent away.
+  // Role-based access guard: only admins may open this page; everyone else is sent away.
   Auth.requireAdmin();
 
   const MAX_IMAGE = 2 * 1024 * 1024;
