@@ -81,7 +81,7 @@
         </ul>
       </div>
     </div>
-    <p class="text-center text-xs text-teal-300 pb-6">&copy; ${new Date().getFullYear()} CivicEvents &middot; Built by shakilla</p>
+    <p class="text-center text-xs text-teal-300 pb-6">&copy; ${new Date().getFullYear()} CivicEvents</p>
   `);
 
     $("#menu-btn").on("click", function () {
